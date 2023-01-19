@@ -23,11 +23,12 @@ to sart working with your recordings, this is the file that you should use.
 		-It will then include the mass and height with a pop-up window, setting these 
 		and other values for the model. Then it will create the bones (segments) and joints 
 		(landmarks) of the model. 
-		-The model is then saved to the folder of your choice and the it uses it to assign it to 
+		-The model is then saved to the folder of your choice and then it uses it to assign it to 
 		the recording that you want to analize, which has already been cleaned from the prefix from 
 		the asset.
 
 	Steps to follow:
+		-Execute the pipeline
 		-Choose standing file to remove its prefixes (this will change the file and save it like that,
 		so it is recommended to make a copy)
 		-Choose modified standing file for calibration
@@ -40,3 +41,48 @@ to sart working with your recordings, this is the file that you should use.
 		-Discard the new pop-up window (it should show no errors nor warnings) and the pipeline workshop
 		in the "Signals and Events" in the top right text box select the recording you want to see
 		-A skeleton should show up and if you press the play button it should start to move
+
+clean_prefix_from_recording.v3s: This file will help you erase the prefix that the asset creates by default. 
+This is done to both the walking file and the calibration one so that both can be freely used.
+	
+	Steps to follow:
+		-Execute the pipeline
+		-Select the file you want to modify
+		-Manually save the file
+
+create_model_without_prefix.v3s: This file will create a working model with a standing recording without the 
+prefixes. This modelo can be then used with any recording without prefixes.
+
+	Steps to follow:
+		-Execute the pipeline
+		-Select the clean standing file
+		-Manually save the file
+
+use_clean_model_with_clean_recording.v3s: This file will use a clean model to provide with movement a clean
+recording.
+
+	Steps to follow:
+		-Execute the pipeline
+		-Select model
+		-Select recording to analyze
+		-Assign the model to the recording
+		-In the "Signals and Events" in the top right text box select the recording you want to see
+
+create_model_from_any_recording.v3s: This file erases the prefixes from the standing trial and creates the model
+from that.
+
+	Steps to follow:
+		-Execute the pipeline
+		-Select standing trial to erase the prefixes
+		-Select standing trial to buil the model
+		-Save the model
+
+use_clean_model_with_any_recording.v3s: This file assigns a model without the prefixes to any recording to make it 
+move.
+
+	Steps to follow:
+		-Execute the pipeline
+		-Select model
+		-Select recording to erase its prefixes
+		-Assign model to the recording
+		-In the "Signals and Events" in the top right text box select the recording you want to see
